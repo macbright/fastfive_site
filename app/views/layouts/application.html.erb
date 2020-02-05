@@ -8,21 +8,6 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-
-    <!-- For third-generation iPad with high-resolution Retina display: -->
-    <!-- Size should be 144 x 144 pixels -->
-   
-    <!-- For iPhone with high-resolution Retina display: -->
-    <!-- Size should be 114 x 114 pixels -->
-   
-    <!-- For first- and second-generation iPad: -->
-    <!-- Size should be 72 x 72 pixels -->
-   
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <!-- Size should be 57 x 57 pixels -->
-   
-    <!-- For all other devices -->
-    <!-- Size should be 32 x 32 pixels -->
    
     <%= javascript_include_tag "application" %>
 
@@ -47,6 +32,21 @@
             <li><%= link_to "Link2", "/path2"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
+					<ul class="nav navbar-right col-md-4">
+						<% if current_user %>
+							<li class="col-md-8 user-name">
+								<%= link_to ('<i class="fa fa-user" aria-hidden="false"></i>' + truncate(current_user.email, length: 25)).html_safe,
+								edit_user_registration_path, title: 'Edit Profile' %>
+							</li>
+							<li class="col-md-1"> </li>
+							<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
+																								class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+						<% else %>
+								<li class="col-md-4 pull-right">
+									<%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+								</li>
+						<% end %>
+					</ul>
         </div>
       </div>
     </div>
