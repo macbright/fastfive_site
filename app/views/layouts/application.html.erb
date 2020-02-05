@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+
    
     <%= javascript_include_tag "application" %>
 
@@ -35,7 +36,7 @@
 					<ul class="nav navbar-right col-md-4">
 						<% if current_user %>
 							<li class="col-md-8 user-name">
-								<%= link_to ('<i class="fa fa-user" aria-hidden="false"></i>' + truncate(current_user.email, length: 25)).html_safe,
+								<%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
 								edit_user_registration_path, title: 'Edit Profile' %>
 							</li>
 							<li class="col-md-1"> </li>
