@@ -1,0 +1,7 @@
+<div class="well post-single">
+    <h2 class="page-header"> <%= @post.title%> </h2>
+		<%= image_tag @post.avatar.url, width:'70%'%>
+    <p> <%= raw @post.body%> </p><br/>
+		<small> Posted by <%= @post.user.email %> on <%= 
+    @post.created_at.to_time.strftime('%B %e at %l:%M %p')%> </small>
+</div>

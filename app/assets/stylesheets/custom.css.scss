@@ -88,3 +88,15 @@ features {
 ul li {
 	list-style: none;
 }
+.post-single{
+	p{
+		line-height: 2em;
+		margin-top: 3em;
+	}
+	img{
+		display: block;
+  	margin-left: auto;
+ 	 	margin-right: auto;
+  	width: 70%;
+	}
+}
