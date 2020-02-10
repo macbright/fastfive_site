@@ -1,5 +1,4 @@
-
-
+<h2><%= @category.title %></h2>
 <div id="posts-index">
     <% if @posts.exists? %>
         <% @posts.each_slice(2) do |post|%>
@@ -9,8 +8,7 @@
                         <div class="post">
                             <%= image_tag post.avatar.url, width: '100%'%>
                             <div class="post-content">
-                                <h3><%= post.title%></h3>
-                                <small> Posted by <%= post.user.first_name%> on <%= 
+                                <small> Posted by <%= post.user.email%> on <%= 
                                 post.created_at.to_time.strftime('%B %e at %l:%M %p')%>
                                 </small>
                                 <%= raw post.body.truncate(200) %>

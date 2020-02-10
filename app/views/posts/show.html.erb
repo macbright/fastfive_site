@@ -5,3 +5,11 @@
 		<small> Posted by <%= @post.user.email %> on <%= 
     @post.created_at.to_time.strftime('%B %e at %l:%M %p')%> </small>
 </div>
+
+<p> <%= link_to "Edit", edit_post_path(@post),
+                class:'btn btn-primary'%> | 
+<%= link_to "Delete", post_path(@post),
+                class:'btn btn-danger', method: :delete, data: 
+                {confirm: "are you sure ?"}%> </p>
+
+<%= render 'partials/comments'%>

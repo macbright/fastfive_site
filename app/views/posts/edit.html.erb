@@ -1,2 +1,36 @@
-<h1>Post#edit</h1>
-<p>Find me in app/views/post/edit.html.erb</p>
+<h2> Edit Post </h2>
+
+<%= form_for(@post) do |x| %>
+
+    <% if @post.errors.any? %>
+        <%  @post.errors.full_messages.each do |msg| %>
+            <%# display error messages %>
+            <div class="alert alert-danger"><%= msg%>
+        <% end %>
+    <% end %>
+    <div class="form-group">
+        <%= x.label :title%> 
+        <%= x.text_field :title, class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
+        <%= x.label :category %> 
+        <%= x.select :category_id, Category.all.collect { |y| [y.title, y.id]},
+        {:include_blank => 'select one'}, class: 'form-control'%>
+    </div>
+
+
+    <div class="form-group">
+        <%= x.label :body%>
+        <%= x.text_area :body, class: 'form-control', id:"froala-editor"%>
+    </div>
+
+		 <div class="form-group">
+        <%= x.label :avatar%>
+        <%= x.file_field :avatar %>
+    </div>
+
+	
+
+    <%= x.submit "Update", class:'btn btn-primary' %>
+<% end %>

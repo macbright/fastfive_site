@@ -12,10 +12,6 @@
    
     <%= javascript_include_tag "application" %>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
-    <![endif]-->
   </head>
   <body>
 
@@ -35,16 +31,26 @@
           </ul>
 					<ul class="nav navbar-right col-md-4">
 						<% if current_user %>
-							<li class="col-md-8 user-name">
-								<%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
-								edit_user_registration_path, title: 'Edit Profile' %>
-							</li>
-							<li class="col-md-1"> </li>
+							
+								<li class="col-md-4 user-name">
+									<% if current_user.avatar %>
+										<%= link_to (image_tag current_user.avatar.url(:thumb)),
+											edit_user_registration_path, title: 'Edit Profile', class: 'user_avatar'%>
+											<%= link_to 'Edit Profile', edit_user_registration_path, title: 'Edit Profile' %>
+									<% else %>	
+										<%= link_to ('<i class="fa fa-user"></i> '  + truncate(current_user.email, length: 25)).html_safe,
+											edit_user_registration_path, title: 'Edit Profile' %>
+									<% end %>
+
+								
+								</li>
+					
+							<li class="col-md-5 greetings"> Hey! <%=current_user.first_name %> &#x1F601; </li>
 							<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
 																								class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
 						<% else %>
 								<li class="col-md-4 pull-right">
-									<%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+									<%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary ', title: 'Sign In') %>
 								</li>
 						<% end %>
 					</ul>
@@ -67,9 +73,11 @@
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
+						
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
+			
 
       <footer>
         <p>&copy; Company 2020</p>

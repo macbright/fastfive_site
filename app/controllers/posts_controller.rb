@@ -7,10 +7,9 @@ class PostsController < ApplicationController
   def create
      @post = Post.new(post_params)
      @post.user_id = current_user.id
-
-    #  if params[:post][:image].blank?
-    #   @post.image = nil
-    #  end
+     if params[:post][:avatar].blank?
+      @post.avatar = nil
+     end
     if @post.save
       flash[:notice] = 'Post created'
       redirect_to posts_path
@@ -25,12 +24,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    # if params[:post][:image].blank?
-    #   @post.image = nil
-    #  end
+    if params[:post][:avatar].blank?
+      @post.avatar = nil
+     end
     if @post.update(post_params)
       flash[:notice] = 'Post Updated'
-      redirect_to admin_posts_path
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -39,6 +38,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @categories = Category.all 
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def destroy
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
 
     flash[:notice] = 'Post Removed'
 
-    redirect_to admin_posts_path
+    redirect_to posts_path
   end
 
   def index

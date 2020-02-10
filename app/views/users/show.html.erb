@@ -1,0 +1,21 @@
+
+<div class="image ">
+    
+    <%= image_tag current_user.avatar.url(:medium), class: "big_avatar" %>
+</div>
+<%# <div class="clearfix">
+</div> %>
+
+<div class="row mt-5 profile_body">
+   <div class="col-md-5 "> 
+        <div class=" bg-white px-3 py-3">
+            <h3> <%= @user.first_name %>'s Info </h3>
+            <p> Name: <%= @user.first_name %> <%= @user.last_name %> </p>
+            <p> Email: <%= @user.email%> </p>
+        </div>
+
+    </div>
+
+    
+
+</div>
