@@ -37,13 +37,14 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @categories = Category.all 
-    @comment = Comment.new
+    @categories = Category.all
+ 
     @comments = Comment.all
   end
 
   def destroy
     @post = Post.find(params[:id])
+
     @post.destroy
 
     flash[:notice] = 'Post Removed'

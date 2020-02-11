@@ -11,6 +11,17 @@
                 <div class="well">
                     <h4><%= comment.user.first_name%> <span>/<%= comment.created_at.to_time.strftime('%B %e at %l:%M %p')%></span></h4>
                     <%= comment.body%>
+										<div class="mt-4">
+											<% if comment.user == current_user %>
+												<div class="edit_delete">
+														<%= link_to "Edit",  edit_post_comment_path(@post, comment), class: "btn btn-info delete-post" %>
+														<%= link_to "Delete", remove_comment_path(id: comment.id), 
+																								method: :delete,
+																								data: { confirm: "You sure?" },
+																								class: "btn btn-danger delete-post" %>
+												</div>
+											<% end %>
+										</div>
                 </div>
             </div>
         </div>

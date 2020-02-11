@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
   root 'welcome#index'
+  delete "remove_comment/:id" => "comments#destroy", :as => "remove_comment"
+ 
   resources :categories
   devise_for :users
   resources :posts
-  
+ 
   resources :posts do 
     resources :comments
   end
