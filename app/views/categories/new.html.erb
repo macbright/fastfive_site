@@ -1,12 +1,2 @@
 <h2> Add New Category </h2>
-
-<%= form_for(@category) do |x| %>
-
-    
-    <div class="form-group">
-        <%= x.label :title%> 
-        <%= x.text_field :title, class: 'form-control'%>
-    </div>
-
-    <%= x.submit "submit", class:'btn btn-primary' %>
-<% end %>
+<%= render 'partials/add-category'%>

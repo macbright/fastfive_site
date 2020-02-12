@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
      @category = Category.new(category_params)
      if @category.save
       flash[:notice] = 'Category created'
-      redirect_to categories_path
+      redirect_to user_path(current_user)
      else 
       render 'new'
      end
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       flash[:notice] = 'Category Updated'
 
-      redirect_to categories_path
+      redirect_to user_path(current_user)
     else
       render 'new'
     end
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
 
     flash[:notice] = 'Category Removed'
 
-    redirect_to categories_path
+    redirect_to user_path(current_user)
   end
 
   def index

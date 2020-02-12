@@ -1,0 +1,19 @@
+<div>
+	<table class="table table-striped">
+			<tr>
+					<th> Category Title</th>
+					<th> Created Date</th>
+					<th> Actions</th>
+			</tr>
+			<% @categories.each do |category|%>
+					<tr>
+							<td> <%= link_to category.title, category_path(category) %></td>
+							<td> <%= category.created_at.to_time.strftime('%B %e at %l:%M &p ')%></td>
+							<td><%= link_to "Edit", edit_category_path(category),
+							class:'btn btn-primary'%> <%= link_to "Delete", category_path(category),
+							class:'btn btn-danger', method: :delete, data: 
+							{confirm: "are you sure ?"}%></td>
+					</tr>
+			<% end %>
+	</table>
+</div>

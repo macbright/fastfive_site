@@ -12,7 +12,7 @@ class PostsController < ApplicationController
      end
     if @post.save
       flash[:notice] = 'Post created'
-      redirect_to posts_path
+      redirect_to user_path(current_user)
     else 
       render 'new'
     end
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
      end
     if @post.update(post_params)
       flash[:notice] = 'Post Updated'
-      redirect_to posts_path
+      redirect_to user_path(current_user)
     else
       render 'new'
     end
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
     flash[:notice] = 'Post Removed'
 
-    redirect_to posts_path
+    redirect_to user_path(current_user)
   end
 
   def index

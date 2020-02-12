@@ -12,5 +12,9 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  def name(user)
+    "#{user.first_name.upcase}  #{user.last_name.upcase}"
+  end
   
 end

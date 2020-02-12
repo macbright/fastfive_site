@@ -1,0 +1,70 @@
+<div>
+	<div class="row mt-4">
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="page-header">Manage Category</h3>
+					<%= link_to "Create New", new_category_path, 
+							class:'btn btn-success'%> <br>
+					<h5> <%= link_to "view all categories", '', 
+							class:'all-categories'%> </h5>
+				</div>
+				<hr>
+				<div class="col-md-12">
+					<h3 class="page-header">Manage Posts</h3>
+					<%= link_to "Create New", new_post_path, 
+							class:'btn btn-success'%><br>
+					<h5> <%= link_to "view all posts", '', 
+							class:'all-posts'%> </h5>
+				</div>
+				<hr>
+
+				<div class="col-md-12">
+					<h3 class="page-header">Manage Users</h3>
+					<h5> <%= link_to "view all users", '', 
+							class:'all-users'%> </h5>
+				</div>
+				<hr>
+
+				<div class="col-md-12">
+					<h3 class="page-header">Manage Card-types</h3>
+					<%= link_to "Create Card-type", '#', 
+							class:'btn btn-success '%><br>
+					<h5> <%= link_to "view all card-types", '#', 
+							class:'card-types'%> </h5>
+				</div>
+				<hr>
+
+				<div class="col-md-12">
+					<h3 class="page-header">Manage Cards</h3>
+					<%= link_to "Add New Card", '#', 
+							class:'btn btn-success'%><br>
+					<h5> <%= link_to "view all unsold cards", '#', 
+							class:'unsold-cards'%> </h5>
+					<h5> <%= link_to "view all sold cards", '#', 
+							class:'sold-cards'%> </h5>
+					<h5> <%= link_to "view all cards", '#', 
+							class:'all-cards'%> </h5>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+
+		<div class="col-md-8 mt-4">
+			<div class="categories">
+				<%= render 'partials/show-categories'%>
+			</div>
+			<hr>
+			<div class="posts">
+				<%= render 'posts/all-posts'%>
+			</div>
+			<hr>
+			<div class="users">
+				<%= render 'users/all-users'%>
+			</div>
+		</div>	
+	</div>
+
+</div>

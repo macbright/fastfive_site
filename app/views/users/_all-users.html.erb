@@ -1,0 +1,26 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr> 
+        <th scope="col">Avatar</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <% @users.each do |user| %>
+      <tbody>
+        <%# <li class= "list-unstyled user_idex1">   %>
+        <tr>
+          <td> <%= image_tag user.avatar.url(:thumb), class: "rounded-circle mx-auto" %> </td>
+
+          <td class="align-middle"><h4 class=""><%= link_to user.name(user), user_path(user)%></h4> </td>
+          
+          <td class="align-middle"> <%= user.email %> </td>
+
+          <td class="align-middle"> 
+						TODO: remove user
+          
+        </tr>
+    <% end %>
+</div>
