@@ -115,6 +115,9 @@ ul li {
 	margin-top: 30px;
 }
 
-.posts, .categories, .users{
+.posts, .categories, .users, .cardTypes, .soldCards, .unsoldCards, .cards{
 	display: none;
+}
+.card-width{
+	width: 50% !important;
 }

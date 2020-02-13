@@ -1,0 +1,11 @@
+<h2> Edit  Card Type </h2>
+<div>
+	<%= form_for(@cardType) do |x| %>
+			<div class="form-group">
+					<%= x.label :name%> 
+					<%= x.text_field :name, class: 'form-control'%>
+			</div>
+
+			<%= x.submit "Update", class:'btn btn-primary' %>
+	<% end %>
+</div>

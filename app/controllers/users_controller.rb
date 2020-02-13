@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @posts = Post.all
     @users = User.where('id != ?', current_user.id)
+    @cardTypes = CardType.all 
   end
 
   def index
@@ -19,6 +20,9 @@ class UsersController < ApplicationController
       @categories = Category.all 
       @posts = Post.all
       @post = Post.new
+      @cardTypes = CardType.all 
+      @soldCards = Card.where(cardStatus: true)
+      @unsoldCards = Card.where(cardStatus: false)
+      @cards = Card.all
     end
-  
 end

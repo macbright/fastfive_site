@@ -1,0 +1,21 @@
+<h2> Add New Card Type </h2>
+<div>
+	<%= form_for(@cardType) do |x| %>
+			<% if @cardType.errors.any? %>
+					<%  @cardType.errors.full_messages.each do |msg| %>
+							<%# display error messages %>
+							<div class="alert alert-danger"><%= msg%>
+					<% end %>
+			<% end %>
+			<div class="form-group">
+					<%= x.label :name%> 
+					<%= x.text_field :name, class: 'form-control'%>
+			</div>
+
+			<div class="field">
+				<%= x.hidden_field :user_id, value: current_user.id %>
+			</div>
+
+			<%= x.submit "submit", class:'btn btn-primary' %>
+	<% end %>
+</div>

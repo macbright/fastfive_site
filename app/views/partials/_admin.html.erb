@@ -28,16 +28,16 @@
 
 				<div class="col-md-12">
 					<h3 class="page-header">Manage Card-types</h3>
-					<%= link_to "Create Card-type", '#', 
+					<%= link_to "Create Card-type", new_card_type_path, 
 							class:'btn btn-success '%><br>
-					<h5> <%= link_to "view all card-types", '#', 
+					<h5> <%= link_to "view all card-types", '', 
 							class:'card-types'%> </h5>
 				</div>
 				<hr>
 
 				<div class="col-md-12">
 					<h3 class="page-header">Manage Cards</h3>
-					<%= link_to "Add New Card", '#', 
+					<%= link_to "Add New Card", new_card_path,  
 							class:'btn btn-success'%><br>
 					<h5> <%= link_to "view all unsold cards", '#', 
 							class:'unsold-cards'%> </h5>
@@ -61,9 +61,29 @@
 				<%= render 'posts/all-posts'%>
 			</div>
 			<hr>
+
+			<div class="soldCards">
+				<%= render 'cards/sold-cards'%>
+			</div>
+
+			<div class="cards">
+				<%= render 'cards/card-index'%>
+			</div>
+		
+			<div class="cardTypes">
+				<%= render 'card_types/index-type'%>
+			</div>
+			<div class="unsoldCards">
+				<%= render 'cards/unsold-cards'%>
+			</div>
+
 			<div class="users">
 				<%= render 'users/all-users'%>
 			</div>
+
+			
+
+			
 		</div>	
 	</div>
 

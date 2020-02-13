@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @post = Post.new

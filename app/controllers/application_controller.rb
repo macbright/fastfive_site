@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :avatar])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :avatar])
   end
+
+  def authorize
+    redirect_to root_path, alert:"Not authorized" if current_user.try(:admin) == false
+  end
 end

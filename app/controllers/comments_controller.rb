@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:show, :new]
   def new
     @comment = Comment.new
   end

@@ -1,0 +1,19 @@
+<div>
+	<table class="table table-striped">
+			<tr>
+					<th> Card Type Name</th>
+					<th> Created Date</th>
+					<th> Actions</th>
+			</tr>
+			<% @cardTypes.each do |cardType|%>
+					<tr>
+							<td> <%= link_to cardType.name, card_type_path(cardType) %></td>
+							<td> <%= cardType.created_at.to_time.strftime('%B %e at %l:%M &p ')%></td>
+							<td><%= link_to "Edit", edit_card_type_path(cardType),
+							class:'btn btn-primary'%> <%= link_to "Delete", card_type_path(cardType),
+							class:'btn btn-danger', method: :delete, data: 
+							{confirm: "are you sure ?"}%></td>
+					</tr>
+			<% end %>
+	</table>
+</div>

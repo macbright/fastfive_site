@@ -1,0 +1,51 @@
+<div>
+	<h2> Edit Card </h2>
+
+	<%= form_for(@card) do |x| %>
+
+			<% if @card.errors.any? %>
+					<%  @card.errors.full_messages.each do |msg| %>
+							<%# display error messages %>
+							<div class="alert alert-danger"><%= msg%>
+					<% end %>
+			<% end %>
+
+			<div class="form-group" >
+					<%= x.label :name %>
+					<%= x.text_field :name, class: 'form-control card-width ' %>
+			</div>
+
+			<div class="form-group">
+					<%= x.label :cardKind%> 
+					<%= x.select :cardKind, CardType.all.collect { |y| [y.name, y.id]},
+					{:include_blank => 'select one'}, class: 'form-control card-width' %>
+			</div>
+
+			<div class="field">
+				<%= x.hidden_field :user_id, value: current_user.id %>
+			</div>
+
+			<div class="form-group" >
+					<%= x.label :cardPin %>
+					<%= x.text_field :cardPin, class: 'form-control card-width ' %>
+			</div>
+
+			<div class="form-group">
+					<%= x.label :cardSerialNum %>
+					<%= x.text_field :cardSerialNum, class: 'form-control card-width' %>
+			</div>
+
+			<div class="form-group">
+					<%= x.label :cardPrice%>
+					<%= x.text_field :cardPrice, class: 'form-control card-width'%>
+			</div>
+
+			<div class="field">
+				<%= x.hidden_field :customer_id, value: 0 %>
+			</div>
+
+		
+
+			<%= x.submit "Update", class:'btn btn-primary' %>
+	<% end %>
+</div>
