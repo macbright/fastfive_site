@@ -108,8 +108,8 @@ ul li {
 	}
 }
 .greetings{
-	float: left;
-	margin-top: 40px;
+	margin-right: 5px;
+	margin-top: 20px;
 }
 .edit_delete{
 	margin-top: 30px;
@@ -120,4 +120,19 @@ ul li {
 }
 .card-width{
 	width: 50% !important;
+}
+
+.create-wallet{
+	margin: 30px 0 200px 160px;
+}
+.wallet-info{
+	float: right;
+	.wallet-button{
+		height: 100px;
+		font-size: 30px;
+	}
+	span{
+		font-size: 30px;
+	}
+
 }

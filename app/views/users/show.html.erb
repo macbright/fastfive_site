@@ -5,14 +5,5 @@
 <% if current_user.admin %>
 	<%= render 'partials/admin'%>
 <% elsif !current_user.admin %>
-	<div class="row mt-5 profile_body">
-		<div class="col-md-5 "> 
-					<div class=" bg-white px-3 py-3">
-							<h3> <%= current_user.first_name %>'s Info </h3>
-							<p> Name: <%= current_user.first_name %> <%= current_user.last_name %> </p>
-							<p> Email: <%= current_user.email%> </p>
-					</div>
-
-			</div>
-	</div>
+	<%= render 'partials/user'%>
 <% end %>

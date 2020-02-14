@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  
   delete "remove_comment/:id" => "comments#destroy", :as => "remove_comment"
- 
+
+  resources :wallets
+  resources :payments 
   resources :categories
   devise_for :users
   resources :posts

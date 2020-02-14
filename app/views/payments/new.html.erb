@@ -1,0 +1,56 @@
+<div>
+	<h2> Fund Your Wallet </h2>
+	
+	<%= form_for(@payment) do |x| %>
+			<% if @payment.errors.any? %>
+					<%  @payment.errors.full_messages.each do |msg| %>
+							<%# display error messages %>
+							<div class="alert alert-danger"><%= msg%>
+					<% end %>
+			<% end %>
+			<div class="form-group">
+					<%= x.label :amount%> 
+					<%= x.number_field :amount, step: :any, class: 'form-control', id: 'amount', 
+					placeHolder: '1000 for NGN 1,000.00'%>
+			</div>
+
+			<div class="field">
+				<%= x.hidden_field :wallet_id, value: current_user.email, id: 'current_user' %>
+			</div>
+
+			<div class="field">
+				<%= x.hidden_field :token, value: "0" %>
+			</div>
+
+			<%= x.submit "Save and Proceed", class:'btn btn-primary', id: "pay-now", onClick: "payWithPaystack()" %>
+	<% end %>
+</div>
+
+<script>
+	let amount = '';
+		document.getElementById("amount").addEventListener("change", e =>{
+			e.preventDefault();
+			amount = e.target.value;
+		})
+		
+  function payWithPaystack(){
+		document.getElementById("new_payment").addEventListener("click", e => {
+			e.preventDefault()
+		}) 
+    var handler = PaystackPop.setup({
+      key: 'pk_test_10baabdb993ba24fa9ba31360143a7e906c4e549',
+      email: document.getElementById("current_user").value,
+      amount: amount,
+      currency: "NGN",
+      ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+  
+      callback: function(response){
+          alert('success. transaction ref is ' + response.reference);
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();
+  }
+</script>

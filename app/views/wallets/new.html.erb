@@ -1,0 +1,16 @@
+
+<div class="w-50">
+	<h2> Create Your Wallet </h2>
+	
+	<%= form_for(@wallet) do |x| %>
+			<div class="field">
+				<%= x.hidden_field :user_id, value: current_user.id %>
+			</div>
+
+			<div class="field">
+				<%= x.hidden_field :balance, value: 0 %>
+			</div>
+
+			<%= x.submit "Create", class:'btn btn-success btn-lg create-wallet' %>
+	<% end %>
+</div>

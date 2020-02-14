@@ -1,0 +1,44 @@
+<div>
+	<div class="row mt-4">
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="page-header">Manage Wallet</h3>
+					<% if current_user.wallet == nil%>
+						<%= link_to "Create Wallet", new_wallet_path, 
+								class:'btn btn-success'%> 
+					<% end %>
+					<br>
+					<br>
+					<%= link_to "Fund Wallet", new_payment_path, 
+							class:'btn btn-success'%> <br>
+					<h5> <%= link_to "View Wallet transactions", '', 
+							class:'wallet'%> </h5>
+				</div>
+				<hr>
+				<div class="col-md-12">
+					<h3 class="page-header"> Manage Cards </h3>
+					<%= link_to "Purchase Card", new_post_path, 
+							class:'btn btn-success'%><br>
+					<h5> <%= link_to "View all Purchased cards", '', 
+							class:'purchased-cards'%> </h5>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+
+		<div class="col-md-8 mt-4">
+			<div class="wallets">
+				<%= render 'partials/user-wallet'%>
+			</div>
+			<hr>
+			<div class="bought_cards">
+			
+			</div>
+			
+		</div>	
+	</div>
+
+</div>
