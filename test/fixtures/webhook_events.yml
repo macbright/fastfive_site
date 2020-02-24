@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source: MyString
+  external_id: MyString
+  data: 
+  state: 1
+  processing_errors: MyText
+
+two:
+  source: MyString
+  external_id: MyString
+  data: 
+  state: 1
+  processing_errors: MyText

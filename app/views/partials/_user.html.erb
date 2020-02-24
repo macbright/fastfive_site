@@ -18,7 +18,7 @@
 				<hr>
 				<div class="col-md-12">
 					<h3 class="page-header"> Manage Cards </h3>
-					<%= link_to "Purchase Card", new_post_path, 
+					<%= link_to "Purchase Card", new_purchase_path, 
 							class:'btn btn-success'%><br>
 					<h5> <%= link_to "View all Purchased cards", '', 
 							class:'purchased-cards'%> </h5>
@@ -35,7 +35,7 @@
 			</div>
 			<hr>
 			<div class="bought_cards">
-			
+				<%= render 'users/bought-cards'%>
 			</div>
 			
 		</div>	

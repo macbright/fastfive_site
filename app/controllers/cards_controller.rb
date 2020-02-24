@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy, :show]
-
+  
   def new
     # @page_title = 'Add Category'
     @card = Card.new

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   delete "remove_comment/:id" => "comments#destroy", :as => "remove_comment"
 
+  post '/webhook_events/payment', to: 'webhook_events#create'
+
   resources :wallets
+  resources :purchases
   resources :payments 
   resources :categories
   devise_for :users

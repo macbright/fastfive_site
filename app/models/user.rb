@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :card_types, dependent: :destroy
   has_many :cards, dependent: :destroy
-  has_one  :wallet
+  has_one  :wallet, dependent: :destroy
 
   def name(user)
     "#{user.first_name.upcase}  #{user.last_name.upcase}"

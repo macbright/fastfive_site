@@ -1,0 +1,23 @@
+<div>
+	<h2> Purchased Cards </h2>
+	<table class="table table-striped">
+			<tr>
+					<th> Card Name</th>
+					<th> Card Type</th>
+					<th> Card Pin</th>
+					<th> Card Serial</th>
+					<th> Card Price</th>
+					<th> Created Date</th>
+			</tr>
+			<% @purchasedCards.each do |card|%>
+					<tr>
+							<td> <%= card.name %></td>
+							<td> <%= card.cardKind %></td>
+							<td> <%= card.cardPin %></td>
+							<td> <%= card.cardSerialNum %></td>
+							<td> <%= card.cardPrice %></td>
+							<td> <%= card.created_at.to_time.strftime('%B %e at %l:%M &p ')%></td>
+					</tr>
+			<% end %>
+	</table>
+</div>

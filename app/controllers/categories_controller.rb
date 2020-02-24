@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
+  
   def new
     # @page_title = 'Add Category'
     @category = Category.new

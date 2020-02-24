@@ -1,0 +1,28 @@
+<div class="mb-4">
+<h2> Purchase </h2>
+
+	<%= form_for(@purchase) do |x| %>
+
+			<% if @purchase.errors.any? %>
+					<%  @purchase.errors.full_messages.each do |msg| %>
+							<%# display error messages %>
+							<div class="alert alert-danger"><%= msg%>
+					<% end %>
+			<% end %>
+			<div class="form-group">
+					<%= x.label :cardName %> 
+					<%= x.select :card_id, Card.all.collect { |y| [y.name, y.id]},
+					{:include_blank => 'select one'}, class: 'form-control'%>
+			</div>
+
+			<div class="field">
+				<%= x.hidden_field :user_id, value: current_user.id %>
+			</div>
+
+			<div class="form-group">
+				<%= x.number_field :quantity, min: 1, class: 'form-control' %>
+			</div>
+
+			<%= x.submit "submit", class:'btn btn-primary' %>
+	<% end %>
+</div>

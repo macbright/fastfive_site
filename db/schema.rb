@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_004119) do
+ActiveRecord::Schema.define(version: 2020_02_19_150938) do
 
   create_table "card_types", force: :cascade do |t|
     t.string "name"
@@ -75,6 +75,14 @@ ActiveRecord::Schema.define(version: 2020_02_14_004119) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "purchases", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "quantity", default: 1
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -103,6 +111,18 @@ ActiveRecord::Schema.define(version: 2020_02_14_004119) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "webhook_events", force: :cascade do |t|
+    t.string "ref"
+    t.integer "external_id"
+    t.json "data"
+    t.integer "state", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["external_id"], name: "index_webhook_events_on_external_id"
+    t.index ["ref", "external_id"], name: "index_webhook_events_on_ref_and_external_id"
+    t.index ["ref"], name: "index_webhook_events_on_ref"
   end
 
   add_foreign_key "card_types", "users"
