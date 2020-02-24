@@ -19,6 +19,7 @@ class WebhookEventsController < ApplicationController
     @result = params[:data][:status]
     @money = params[:data][:amount]
     @email = params[:data][:customer][:email]
+    p "the returns params #{params[:data]}"
     case params[:event]
     when 'charge.success'
       # render status: 200
@@ -26,7 +27,7 @@ class WebhookEventsController < ApplicationController
       if @result == 'success'
         @user = User.find_by(email: @email)
         @user.wallet.fund_wallet(@money)
-        @user.wallet.save #respond_to 200 ok
+        @user.wallet.save
         return 200
       else 
         render json:  'Transaction failed'
