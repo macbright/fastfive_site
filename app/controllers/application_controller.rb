@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
     return price
   end
 
+  
+
   def authorize
     redirect_to root_path, alert:"Not authorized" if current_user.try(:admin) == false
   end
