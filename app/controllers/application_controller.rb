@@ -17,7 +17,14 @@ class ApplicationController < ActionController::Base
     return price
   end
 
-  
+  def rails_credential
+    if Rails.env.development?
+      Rails.application.credentials.paystack[:paystack_public_key]
+    end
+    if Rails.env.production?
+       Rails.application.credentials.paystack[:paystack_public_key]
+    end
+  end
 
   def authorize
     redirect_to root_path, alert:"Not authorized" if current_user.try(:admin) == false
