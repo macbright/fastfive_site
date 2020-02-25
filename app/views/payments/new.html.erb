@@ -44,7 +44,7 @@
 			e.preventDefault()
 		}) 
     var handler = PaystackPop.setup({
-      key: document.getElementById("paystack_key").value,
+      key: document.getElementById("paystack_key").value || PAYSTACK_PUBLIC_KEY,
       email: document.getElementById("current_user").value,
       amount: amount * 100,
       currency: "NGN",
