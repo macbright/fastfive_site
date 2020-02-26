@@ -4,72 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "FastfiveApp" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Fastfive CBT CENTER" %></title>
     <%= csrf_meta_tags %>
 
+		<%= javascript_pack_tag 'application' %>
     <%= stylesheet_link_tag "application", :media => "all" %>
-
-   
-    <%= javascript_include_tag "application" %>
-		<%= javascript_pack_tag 'index', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application' %>
+		<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    
 		<script src="https://js.paystack.co/v1/inline.js"></script>
+		
+		
+		
 
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">FastfiveApp</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
-					<ul class="nav navbar-right col-md-6">
-						<% if current_user %>
-								<li class="col-md-3 user-name">
-									<% if current_user.avatar %>
-										<%= link_to (image_tag current_user.avatar.url(:thumb)),
-											user_path(current_user), title: 'Edit Profile', class: 'user_avatar'%>
-											<%= link_to 'Edit Profile', edit_user_registration_path, title: 'Edit Profile' %>
-									<% else %>	
-										<%= link_to ('<i class="fa fa-user"></i> '  + truncate(current_user.first_name, length: 25)).html_safe,
-											edit_user_registration_path, title: 'Edit Profile' %>
-									<% end %>
-
-								
-								</li>
-					
-							<li class="col-md-5 greetings"> 
-								<% if !current_user.admin %>
-									<% if current_user.wallet != nil%>
-										<button type="button" class="btn btn-success btn-lg mb-3">
-											Wallet <span class="badge badge-light"> NGN <%=current_user.wallet.balance%>.00</span>
-										</button>
-									<% else %>
-										Hey! <%=current_user.first_name %> &#x1F601; 
-									<% end %>
-								<% end %>
-							</li>
-							<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
-																								class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
-						<% else %>
-								<li class="col-md-4 pull-right">
-									<%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary ', title: 'Sign In') %>
-								</li>
-						<% end %>
-					</ul>
-        </div>
-      </div>
-    </div>
-
+    <%= render 'layouts/nav'%>
+		<div class="container overflow"> 
+			<%= render 'layouts/motion-about'%>
+		</div>
     <div class="container">
+			
       <div class="row">
         <div class="col-lg-11">
           <%= bootstrap_flash %>
@@ -79,11 +35,13 @@
       </div><!--/row-->
 			
 
-      <footer>
-        <p>&copy; FastFive Computers 2020</p>
-      </footer>
 
     </div> <!-- /container -->
+		<footer>
+        <p>&copy; FastFive Computers 2020</p>
+
+				<a href="mailto:brightokike@gmail.com?subject=Questions&body=Write here if you have questions" title="" >Questions here. Send us mail</a>
+      </footer>
 	
   </body>
 </html>

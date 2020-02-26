@@ -1,0 +1,52 @@
+<div class="navbar navbar-default navbar-static-top nav-color">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+				<%= link_to (image_tag 'fastfive2.png'), root_path, class: "navbar-brand logo" %>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+						<li><%= link_to 'HOME', root_path%>
+            <li><%= link_to "ALL POSTS", posts_path  %></li>
+            <li><%= render 'layouts/categories'%></li>
+            <li><%= link_to "Link3", "/path3"  %></li>
+          </ul>
+					<ul class="nav navbar-right col-md-6">
+						<% if current_user %>
+								<li class="col-md-3 user-name">
+									<% if current_user.avatar %>
+										<%= link_to (image_tag current_user.avatar.url(:thumb)),
+											user_path(current_user), title: 'Edit Profile', class: 'user_avatar'%>
+											<%= link_to 'Edit Profile', edit_user_registration_path, title: 'Edit Profile' %>
+									<% else %>	
+										<%= link_to ('<i class="fa fa-user"></i> '  + truncate(current_user.first_name, length: 25)).html_safe,
+											edit_user_registration_path, title: 'Edit Profile' %>
+									<% end %>
+								
+								</li>
+					
+							<li class="col-md-5 greetings"> 
+								<% if !current_user.admin %>
+									<% if current_user.wallet != nil%>
+										<button type="button" class="btn btn-success btn-lg mb-3">
+											Wallet <span class="badge badge-light"> NGN <%=current_user.wallet.balance%>.00</span>
+										</button>
+									<% else %>
+										Hey! <%=current_user.first_name %> &#x1F601; 
+									<% end %>
+								<% end %>
+							</li>
+							<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
+																								class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+						<% else %>
+								<li class="col-md-4 pull-right">
+									<%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary sign-in', title: 'Sign In') %>
+								</li>
+						<% end %>
+					</ul>
+        </div>
+      </div>
+    </div>

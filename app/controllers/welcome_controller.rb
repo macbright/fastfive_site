@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
  
   
   def index
-    @post = Post.new
+    @posts = Post.last(6)
+    @categories = Category.all
   end
 end

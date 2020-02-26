@@ -8,7 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
 			showCardTypes()
 			showSoldCard()
 			showUnsoldCards()
-			showCards()			
+			showCards()	
+			
+			$('.carousel').carousel({
+					interval: 2000
+			});
+			$('.dropdown-toggle').dropdown()
 });
 
 var $ = document.querySelector.bind(document);

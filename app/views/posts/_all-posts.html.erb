@@ -12,7 +12,7 @@
                                 <small> Posted by <%= post.user.first_name%> on <%= 
                                 post.created_at.to_time.strftime('%B %e at %l:%M %p')%>
                                 </small>
-                                <%= raw post.body.truncate(200) %>
+                                <%= truncate(strip_tags(post.body .to_s), length: 50) %>
                                 <%= link_to "Read More", post_path(post), class: 'btn btn-primary'%>
                             </div>
                         </div>

@@ -136,3 +136,97 @@ ul li {
 	}
 
 }
+
+.carousel-image{
+	height: 300px !important;
+}
+
+.logo {
+	padding: 0 !important;
+	img{
+		height: 45px !important;
+		vertical-align: top !important;
+	}
+}
+
+.nav-color{
+	background-color: #eff5ef !important;
+}
+
+.motion-about{
+	margin-bottom: 20px;
+	marquee{
+		// height: 40px;
+		border-radius: 20px;
+		font-size: 2rem;
+		text-align: center;
+		padding-top: 5px;
+		img{
+			padding: 0;
+			height: 30px;
+		}
+		strong{
+			color: #fa0000;
+			margin: 0 8px;
+		}
+	}
+	
+}
+.nav-color{
+	position: sticky;
+  top: 0;
+	margin-bottom: 5px !important;
+}
+.sign-in{
+	background-color: green;
+	font-size: 2rem !important;
+	font-weight: bold !important;
+	padding: 3px 3px 3px 3px !important;
+}
+.waec{
+
+	img{
+		width: 100%;
+	}
+}
+.neco{
+	margin-top: 20px;
+}
+
+.overflow{
+	position: sticky;
+
+}
+.dropdown{
+	background-color: #eff5ef !important;
+	margin-top: 2px;
+	.d-block{
+		display: block;
+		background-color: #eff5ef !important;
+	}
+	.dropdown-toggle, .dropdown-menu{
+		background-color: #eff5ef !important;
+		padding: 8px;
+		font-size: 2rem;
+		font-weight: bold;
+		color:  #fa0000;
+	}
+	a{
+		font-size: 1.5rem;
+		padding: 5px;
+		font-weight: bold;
+		color:  #fa0000;
+	}
+	
+}
+
+.collapse{
+	li{
+		font-size: 2rem;
+		a{
+			font-weight: bold;
+			color:  #fa0000 !important;
+		}
+		
+	}
+}

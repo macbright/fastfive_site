@@ -1,42 +1,12 @@
-  <div class="jumbotron">
-    <h2>Welcome Fastfive CBT center</h2>
-    <p class="lead">
-      Get the latest  updates  on JAMB, WAEC, NECO, UNIVERSITIES 
-			and also buy all scratch cards online with your card
-    </p>
-  </div>
+  <div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= render 'welcome/slide-show' %>
+			</div>
 
-  <div class="row">
-    <div class="plans clearfix">
-      <div class="col-lg-3 col-lg-offset-3 plan">
-        <h2>WAEC Result Checker</h2>
-        <div class="price pull-right">
-          Price: $10
-        </div>
-        <div class="features">
-          <ul>
-            <li>Card sent immediately </li>
-						<li> to your email and phone</li>
-          </ul>
-        </div>
-        <p>
-          <%= link_to 'Buy Now', new_user_registration_path, class: 'btn btn-primary sign-up' %>
-        </p>
-      </div>
-      <div class="col-lg-3 plan">
-        <h2>NECO Result Checker</h2>
-        <div class="price pull-right">
-          Price: $10
-        </div>
-        <div class="features">
-          <ul>
-            <li>Card sent immediately </li>
-						<li> to your email and phone</li>
-          </ul>
-        </div>
-        <p>
-          <%= link_to 'Buy Now', new_user_registration_path, class: 'btn btn-primary sign-up' %>
-        </p>
-      </div>
-    </div>
-  </div>
+			<div class="col-md-4">
+				<%= render 'welcome/cards'%>
+			</div>
+		</div>
+
+	</div>
