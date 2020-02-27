@@ -10,10 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			showUnsoldCards()
 			showCards()	
 			
-			$('.carousel').carousel({
-					interval: 2000
-			});
-			$('.dropdown-toggle').dropdown()
+		
 });
 
 var $ = document.querySelector.bind(document);

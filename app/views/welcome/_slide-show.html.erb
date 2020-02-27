@@ -8,7 +8,7 @@
     <% @posts.each.with_index(0) do |post, index| %>
       <div class="item <%= index == 0 ? 'active' : '' %>">
         <%= image_tag(post.avatar.url, width: '100%', class: 'd-block w-100 img-fluid carousel-image') %>
-				<p> <%= truncate(strip_tags(post.body .to_s), length: 50) %></p>
+				<p> <%= truncate(strip_tags(post.body .to_s), length: 200) %></p>
         <p><%= link_to "Read More", post_path(post), class: 'btn btn-primary '%></p>
       </div>
     <% end %>
@@ -22,6 +22,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 
 
 <script type="text/javascript">

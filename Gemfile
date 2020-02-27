@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem "paperclip", "~> 6.0.0"
 gem 'will_paginate'
 gem 'paystack'
+gem 'font-awesome-rails'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets

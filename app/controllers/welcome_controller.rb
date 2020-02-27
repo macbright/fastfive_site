@@ -4,6 +4,8 @@ class WelcomeController < ApplicationController
   
   def index
     @posts = Post.last(6)
+    @lastPosts = Post.last(20)
     @categories = Category.all
+    @cards =  Card.select(:name, :cardPrice).distinct
   end
 end

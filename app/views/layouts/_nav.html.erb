@@ -9,10 +9,13 @@
 				<%= link_to (image_tag 'fastfive2.png'), root_path, class: "navbar-brand logo" %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-						<li><%= link_to 'HOME', root_path%>
-            <li><%= link_to "ALL POSTS", posts_path  %></li>
+						<li><%= link_to 'Home', root_path%>
+            <li><%= link_to "Posts", posts_path  %></li>
             <li><%= render 'layouts/categories'%></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><a href="#offices"> Offices</a></li>
+						<li><a href="#about"> About</a></li>
+						<li><a href="#card-lists">Available Cards</a></li>
+						
           </ul>
 					<ul class="nav navbar-right col-md-6">
 						<% if current_user %>

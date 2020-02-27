@@ -1,3 +1,12 @@
+@import "font-awesome";
+
+body{
+	background-color:  rgb(244, 249, 244);
+}
+
+// .navbar{
+// 	height: 60px;
+// }
 .user-name {
 	padding: 0 !important ;
 	padding-left: 5px;
@@ -15,7 +24,7 @@
 }
 .logout {
 	padding-left: 0;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .nav.navbar-right {
 	padding-bottom: 10px;
@@ -229,4 +238,109 @@ ul li {
 		}
 		
 	}
+}
+
+.office{
+	text-align: center;
+	h5{
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+	.phone-num{
+		color: red;
+	}
+	
+	i{
+		color: #059d00;
+	}
+	.phone-icon, .email-icon, .address-icon{
+		margin-right: 15px;
+	}
+}
+.heading{
+	font-weight: bold;
+	color: #059d00;
+}
+#offices{
+	// height: 100vh;
+	margin-bottom: 15px;
+	.col-md-4{
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+		}
+		text-align: center;
+		i{
+			color:  #059d00;
+		}
+	}
+}
+#about{
+	// height: 84vh;
+	margin-bottom: 15px;
+	.col-md-4{
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+		}
+		text-align: center;
+		i{
+			color:  #059d00;
+		}
+	}
+	p{
+		font-size: 16px;
+		text-align: justify;
+	}
+}
+.map{
+	border-radius: 10px;
+	box-shadow: seashell;
+}
+.latest-post{
+	overflow: hidden;
+}
+#card-lists{
+	// height: 84vh;
+	margin-bottom: 15px;
+	.col-md-4{
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+		}
+		text-align: center;
+		i {
+			color:  #059d00;
+		}
+	}
+	li{
+		font-size: 2rem;
+		font-weight: bold;
+		line-height: 1.5;
+		margin: 10px;
+		list-style-type: square;
+		
+	}
+
+	.price{
+		color: red;
+		font-weight: bolder;
+	}
+	
+
+	span{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+}
+.footer{
+	background-color: #059d00;
+	margin: 0;
+	width: 100%;
 }

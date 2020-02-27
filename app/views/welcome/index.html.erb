@@ -2,6 +2,12 @@
 		<div class="row">
 			<div class="col-md-8">
 				<%= render 'welcome/slide-show' %>
+				<div class="latest-post">
+					<h3 class="heading">Latest Posts </h3>
+					<% @lastPosts.each do |post| %>
+						<h4><%= link_to post.title, post_path(post)%><h4>
+					<% end %>
+				</div>
 			</div>
 
 			<div class="col-md-4">
@@ -9,4 +15,93 @@
 			</div>
 		</div>
 
+</div>
+<hr>
+<section class="row" id="offices">
+	<h2 class="heading"> Offices </h2>
+	<hr>
+
+	<div class="col-md-4"> 
+		<%= image_tag('fastfive2.png' )%>
+		<h5><%=fa_icon "envelope-open 2x", class:"email-icon"%>
+		<a href="mailto:brightokike@gmail.com?subject=Questions&body=Write here if you have questions" title="" >
+		Feedback. Ur Feedback Matters</a> </h5>
 	</div>
+
+	<div class="col-md-8 office">
+		<h5> <%=fa_icon "map-marker 2x", class:"address-icon"%> No 11 Palace Road, 
+		Off Shell Location Road, Oyigbo, Rivers State (CBT Center/Office)</h5>
+		<h5> <%=fa_icon "map-marker 2x", class:"address-icon"%> Road B5 Valley View 
+		Estate Flat1, Atali Port Harcourt (Office)</h5>
+		<h5 class="phone-num">
+		<marquee width="400"> <%=fa_icon "phone 2x", class:"phone-icon"%> +2347035833276 +2348082577417, +234704425812</marquee> </h5>
+		<h5><%=fa_icon "envelope-open 2x", class:"email-icon"%>
+		<a href="mailto:brightokike@gmail.com?subject=Questions&body=Write here if you have questions" title="" >
+		Questions here. Send us mail</a> </h5>
+
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.8448212704825!2d7.1353417265865255!3d4.875972196459584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNTInMzMuNSJOIDfCsDA4JzA5LjIiRQ!5e0!3m2!1sen!2sby!4v1582807735550!5m2!1sen!2sby" 
+			width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+		</div>
+	</div>
+
+</section>
+<hr>
+<div class="row" id="about">
+
+	<h2 class="heading"> About Us</h2>
+	<hr>
+	<div class="col-md-4"> 
+		<%= image_tag('fastfive2.png' )%>
+		<h5><%=fa_icon "envelope-open 2x", class:"email-icon"%>
+		<a href="mailto:brightokike@gmail.com?subject=Questions&body=Write here if you have questions" title="" >
+		Feedback. Ur Feedback Matters</a> </h5>
+	</div>
+	<div class="col-md-8">
+		<p>Fastfive CBT is a fully accredited JAMB Examination center. </p>
+
+		<p>We also provide CBT center for company recruitment examination, scholarship exams 
+		and any type of examination that requires CBT center </p>
+		<br>
+
+		<p> We sale all kind of result checker cards Ranging from WACE, NECO, JAMB to POSTUTME
+		 for all universities, Which can be purchased online through our site. Sign in if you 
+		 are already a user or sign up if you are not. fund your wallet, purchase card. 
+		 The pin reflects immediately on ur dashboard </p>
+		 <br>
+
+		 <p> In any of our offices, we sale and process any kind of online form. ranging from
+		 JAMB, Post-UTME, NYSC, WAEC, NECO, NABTEB, GCE, ARMY NAVY and AIRFORCE
+		 recruitments, recruitments to Visa Lottery etc</p>
+			<br>
+
+		<p>Latest Updates from JAMB, Post-UTME, NYSC, WAEC, NECO, NABTEB, GCE, ARMY NAVY and AIRFORCE
+		 recruitments,  Scholarships, Post UME Past Questions, Study in Nigeria and Study Abroad</p>
+		<br>
+
+		<p>
+			We provide scholarly infos and report latest news/trends from higher institutions, colleges and schools to assist:
+				We strive to keep Nigerian youths and students informed with their academic pursuits,
+				Educators who coach the students,
+				Investors and others who have interests in the education industry.
+		</p>
+	</div>
+</div>
+<hr>
+<div class="row" id="card-lists">
+	<h2 class="heading">Lists of Cards and Prices </h2>
+	<hr>
+	<div class="col-md-4">
+		<%= image_tag('fastfive2.png')%>
+		<h5><%=fa_icon "envelope-open 2x", class:"email-icon"%>
+		<a href="mailto:brightokike@gmail.com?subject=Questions&body=Write here if you have questions" title="" >
+		Feedback. Ur Feedback Matters</a> </h5>
+	</div>
+
+	<marquee direction="up" class="col-md-8" height="400"> <ul >
+		<% @cards.each do |card| %>
+		<li>	<span class="name"> <%=  card.name  %> </span> | <span class="price"><%= card.cardPrice  %> <br> </span></li>
+	
+		<% end %>
+	</ul> </marquee>
+</div>
