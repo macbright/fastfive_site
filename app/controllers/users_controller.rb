@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where('id != ?', current_user.id)
+    
     # render :json => User.all
   end
 
