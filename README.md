@@ -69,7 +69,8 @@ $ cd myproject
 - LinkedIn: [@bokike](https://www.linkedin.com/in/bokike/)
 - Twitter: [@b_okike](https://twitter.com/b_okike)
 
-
+## Future Features
+1. convert the app into a single page app using the Rails API at the backend and React & Redux at the frontend
 
 
 ## Contributing
